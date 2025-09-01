@@ -1,7 +1,7 @@
 // Simuler une base de données d'utilisateurs avec une couleur de profil
 const users = [
-    { username: 'LUCAS', password: 'mdp1', color: 'blue' },
-    { username: 'PAUL', password: 'mdp2', color: 'green' },
+    { username: 'LUCAS', password: '12123', color: 'blue' },
+    { username: 'PAUL', password: 'Paul14', color: 'green' },
     { username: 'admin', password: 'password', color: 'red' }
 ];
 
