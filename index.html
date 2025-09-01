@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma page web</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div id="loginPopup" class="popup-container">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Connexion</h2>
+            <form id="loginForm">
+                <label for="username">Identifiant :</label>
+                <input type="text" id="username" name="username">
+                
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password">
+                
+                <button type="submit">Valider</button>
+                <p id="message"></p>
+            </form>
+            
+            <div class="quick-login-container">
+                <p>Connexion rapide :</p>
+                <button id="quickLoginProfil1" data-user="LUCAS">LUCAS</button>
+                <button id="quickLoginProfil2" data-user="PAUL">PAUL</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="accueilPage" class="hidden-page">
+        <div class="bandeau">
+            <nav class="bandeau-content">
+                <span id="bandeauTitle">Mes Séances</span>
+                <button id="resetGraphBtn">Réinitialiser la courbe</button>
+                <button id="logoutBtn">Se déconnecter</button>
+            </nav>
+        </div>
+        <div class="content-accueil">
+            </div>
+    </div>
+
+    <div id="dayPopup" class="popup-container day-popup-hidden">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="dayPopupTitle"></h2>
+            <div id="dayPopupContent">
+                </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

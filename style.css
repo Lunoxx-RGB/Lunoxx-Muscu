@@ -1,0 +1,294 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Styles pour la pop-up de connexion */
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 0;
+    position: relative;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+.popup-content h2 {
+    color: #333;
+}
+
+.popup-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.popup-content input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup-content button {
+    background-color: #7f52b8;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.quick-login-container {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.quick-login-container p {
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.quick-login-container button {
+    background-color: #5d259c;
+    margin: 0 5px;
+}
+
+/* Styles pour le bouton de fermeture */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    color: #7f52b8;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+    transform: rotate(90deg);
+}
+
+/* Styles pour la page d'accueil */
+.hidden-page {
+    display: none;
+}
+
+.show-page {
+    display: block;
+}
+
+.bandeau {
+    height: 60px;
+    width: 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.5s ease;
+}
+
+.bandeau-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.bandeau-content span {
+    color: white;
+    font-size: 1.5em;
+}
+
+.bandeau-content button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+/* Styles pour le bouton de réinitialisation */
+#resetGraphBtn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 0.9em;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+#resetGraphBtn:hover {
+    opacity: 1;
+}
+
+/* NOUVEAU: Style pour la flèche de retour */
+#backArrow {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-right: 10px;
+    display: none; /* Cachée par défaut */
+}
+
+.content-accueil {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Couleurs de fond pour le bandeau selon le profil */
+.bandeau-blue {
+    background-color: #2196F3;
+}
+
+.bandeau-green {
+    background-color: #4CAF50;
+}
+
+.bandeau-red {
+    background-color: #F44336;
+}
+
+/* Styles pour les boutons "Salle" et "Maison" */
+.location-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.location-buttons button {
+    background-color: #7f52b8;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.location-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Styles pour les boutons des jours de la semaine */
+.day-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.day-buttons button {
+    background-color: #7f52b8;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    min-width: 120px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.day-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Classe pour cacher la pop-up des jours */
+.day-popup-hidden {
+    display: none;
+}
+
+/* Styles pour la barre de progression */
+.progress-container {
+    width: 90%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+#progressBar {
+    width: 0;
+    height: 20px;
+    background-color: #7f52b8;
+    border-radius: 10px;
+    transition: width 0.4s ease-in-out;
+}
+
+#congratsMessage {
+    color: #4CAF50;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+    display: none;
+}
+
+/* Styles pour les listes d'exercices */
+.exercise-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.exercise-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.exercise-item input[type="checkbox"] {
+    margin-right: 10px;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #7f52b8;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    top: -2px;
+}
+
+.exercise-item input[type="checkbox"]:checked {
+    background-color: #7f52b8;
+    border-color: #7f52b8;
+}
+
+.exercise-item input[type="checkbox"]:checked::after {
+    content: '✓';
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
